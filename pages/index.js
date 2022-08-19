@@ -197,7 +197,7 @@ export default function Home() {
             // color="brand.800"
             colorScheme="green"
           >
-            Initialize Bundlr with Polygon (Ethereum Wallet)
+            Initialize Bundlr with Ethereum Wallet
           </Button>
         )}
         {balance && (
