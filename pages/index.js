@@ -197,7 +197,7 @@ export default function Home() {
             // color="brand.800"
             colorScheme="green"
           >
-            Initialize Bundlr
+            Initialize Bundlr with Polygon (Ethereum Wallet)
           </Button>
         )}
         {balance && (
@@ -219,7 +219,7 @@ export default function Home() {
               mb="5"
               // _hover={{ bg: "brand.900", color: "brand.700" }}
             >
-              Fund Wallet
+              Fund Wallet with MATIC
             </Button>
             <Input type="file" onChange={onFileChange} mb="3" padding="1" />
             {image && (
@@ -240,7 +240,7 @@ export default function Home() {
               mb="3"
               // _hover={{ bg: "brand.900", color: "brand.800" }}
             >
-              Upload File
+              Upload File to Bundlr & Arweave
             </Button>
             <br />
             {URI && (
