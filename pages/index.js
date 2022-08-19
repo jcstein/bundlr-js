@@ -179,26 +179,25 @@ export default function Home() {
       <Container px="10" py="16" maxW="800px">
         <Heading pb="5">Bundlr Network image uploader (MATIC)</Heading>
         <Text pb="5">
-          Bundlr is building the next generation of data storage by bringing the
-          speed and ease of web2 to web3 technology. We&apos;re a decentralized
-          storage scaling platform powered by Arweave. We make it easy for
-          developers and businesses to store their data permanently, for a
-          one-time fee.
+          Bundlr is building the next generation of data storage by bringing the speed and ease of web2 to web3 technology. We&apos;re a decentralized storage scaling platform powered by Arweave. We make it easy for developers and businesses to store their data permanently, for a one-time fee.
         </Text>
         <Text pb="5">
-          This dApp is built with the Bundlr JavaScript SDK and Arweave. The
-          payment method for uploading to Arweave with Bundlr is set to MATIC on
-          Polygon for this version.
+          This dApp is built with the Bundlr JavaScript SDK. The payment method for uploading to Arweave using Bundlr is set to MATIC on Polygon for this version. Are you ready to upload your image to the permaweb?
         </Text>
         {!balance && (
+          <div>
+          <Text pb="5">
+          To get started, connect your Ethereum Wallet below to initialize Bundlr. You will see your balance in MATIC displayed and be able to upload your image to Arweave using Bundlr.
+        </Text>
           <Button
             onClick={initializeBundlr}
             // backgroundColor="brand.900"
             // color="brand.800"
             colorScheme="green"
           >
-            Initialize Bundlr with Ethereum Wallet
+            🔌 Connect Wallet
           </Button>
+          </div>
         )}
         {balance && (
           <div>
