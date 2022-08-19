@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import Topbuttons from "./Components/topbuttons";
+import Head from "next/head";
 
 export default function Home() {
   const [file, setFile] = useState();
@@ -76,6 +77,104 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        {/* META */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en" />
+
+        {/* TITLES */}
+        <title>Bundlr.js - Arweave Uploader</title>
+        <meta name="apple-mobile-web-app-title" content="Bundlr.js Uploader" />
+        <meta name="twitter:title" content="Bundlr.js - Arweave Uploader" />
+        <meta property="og:title" content="Bundlr.js - Arweave Uploader" />
+        <meta property="og:site_name" content="Bundlr.js - Arweave Uploader" />
+
+        {/* FAVICONS */}
+        <meta name="favicon" content="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
+
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-icon-180x180.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/android-icon-192x192.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/favicon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+
+        {/* LINKS */}
+        <link rel="canonical" href="https://bundlrjs.xyz" />
+        <meta name="twitter:url" content="https://bundlrjs.xyz" />
+        <meta property="og:url" content="https://bundlrjs.xyz" />
+        <meta name="twitter:site:domain" content="bundlrjs.xyz" />
+
+        {/* THEME */}
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff" />
+
+        {/* DESCRIPTION */}
+        <meta
+          property="og:description"
+          content="Upload to Arweave using Bundlr.js and MATIC"
+        />
+        <meta
+          name="twitter:description"
+          content="Upload to Arweave using Bundlr.js and MATIC"
+        />
+        <meta
+          name="description"
+          content="Upload to Arweave using Bundlr.js and MATIC"
+        />
+
+        {/* TWITTER */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@BundlrNetwork" />
+
+        {/* IMAGE */}
+        <meta
+          property="og:image:url"
+          content="https://raw.githubusercontent.com/jcstein/jpegs/main/bundlrjs.png"
+        />
+        <meta
+          property="og:image:secure_url"
+          content="https://raw.githubusercontent.com/jcstein/jpegs/main/bundlrjs.png"
+        />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/jcstein/jpegs/main/bundlrjs.png"
+        />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/jcstein/jpegs/main/bundlrjs.png"
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Bundlr.js - Arweave Uploader" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+      </Head>
       <Topbuttons />
       <Container px="10" py="16" maxW="800px">
         <Heading pb="5">Bundlr Network image uploader (MATIC)</Heading>
