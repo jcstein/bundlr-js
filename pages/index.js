@@ -11,9 +11,10 @@ import {
   Code,
   Alert,
   AlertIcon,
+  Link,
 } from "@chakra-ui/react";
-import { Link } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import Topbuttons from "./Components/topbuttons";
 
 export default function Home() {
   const [file, setFile] = useState();
@@ -74,89 +75,93 @@ export default function Home() {
   }
 
   return (
-    <Container px="10" py="16" maxW="800px">
-      <Heading pb="5">Bundlr Network image uploader (MATIC)</Heading>
-      <Text pb="5">
-        Bundlr is building the next generation of data storage by bringing the
-        speed and ease of web2 to web3 technology. We&apos;re a decentralized
-        storage scaling platform powered by Arweave. We make it easy for
-        developers and businesses to store their data permanently, for a
-        one-time fee.
-      </Text>
-      <Text pb="5">
-        This dApp is built with the Bundlr JavaScript SDK and Arweave. The
-        payment method for uploading to Arweave with Bundlr is set to MATIC on
-        Polygon for this version.
-      </Text>
-      {!balance && (
-        <Button
-          onClick={initializeBundlr}
-          backgroundColor="brand.900"
-          color="brand.800"
-        >
-          Initialize Bundlr
-        </Button>
-      )}
-      {balance && (
-        <div>
-          <Text fontSize="xl" fontStyle="bold" color="brand.700" pb="5">
-            MATIC Balance: {balance}
-          </Text>
-          <Input
-            placeholder="Amount to fund wallet"
-            onChange={(e) => setAmount(e.target.value)}
-            mb="3"
-            type="number"
-          />
+    <div>
+      <Topbuttons />
+      <Container px="10" py="16" maxW="800px">
+        <Heading pb="5">Bundlr Network image uploader (MATIC)</Heading>
+        <Text pb="5">
+          Bundlr is building the next generation of data storage by bringing the
+          speed and ease of web2 to web3 technology. We&apos;re a decentralized
+          storage scaling platform powered by Arweave. We make it easy for
+          developers and businesses to store their data permanently, for a
+          one-time fee.
+        </Text>
+        <Text pb="5">
+          This dApp is built with the Bundlr JavaScript SDK and Arweave. The
+          payment method for uploading to Arweave with Bundlr is set to MATIC on
+          Polygon for this version.
+        </Text>
+        {!balance && (
           <Button
-            onClick={fundWallet}
-            bg="brand.700"
-            color="brand.900"
-            mb="5"
-            _hover={{ bg: "brand.900", color: "brand.700" }}
+            onClick={initializeBundlr}
+            // backgroundColor="brand.900"
+            // color="brand.800"
+            colorScheme="green"
           >
-            Fund Wallet
+            Initialize Bundlr
           </Button>
-          <Input type="file" onChange={onFileChange} mb="3" padding="1" />
-          {image && (
-            <Image
-              src={image}
-              type="image/png"
-              alt="your arweave upload"
-              pb="3"
-              maxW={["300px", "400px", "500px", "600px"]}
+        )}
+        {balance && (
+          <div>
+            <Text fontSize="xl" fontStyle="bold" pb="5">
+              MATIC Balance: {balance}
+            </Text>
+            <Input
+              placeholder="Amount to fund wallet"
+              onChange={(e) => setAmount(e.target.value)}
+              mb="3"
+              type="number"
             />
-          )}
-          <Button
-            onClick={uploadFile}
-            backgroundColor="brand.800"
-            color="brand.900"
-            mb="3"
-            _hover={{ bg: "brand.900", color: "brand.800" }}
-          >
-            Upload File
-          </Button>
-          <br />
-          {URI && (
-            <div>
-              <Alert status="success" rounded="full" mb="3">
-                <AlertIcon />
-                File uploaded to Arweave. gm Permaweb!
-              </Alert>
-              <Link href={URI} isExternal color="brand.700">
-                View upload on Arweave <ExternalLinkIcon mx="2px" />
-              </Link>
-              <br />
-              <Text pt="3" color="brand.800">
-                Arweave ID:{" "}
-                <Code color="brand.800" bg="brand.900">
-                  {transaction}
-                </Code>
-              </Text>
-            </div>
-          )}
-        </div>
-      )}
-    </Container>
+            <Button
+              onClick={fundWallet}
+              // bg="brand.700"
+              // color="brand.900"
+              colorScheme="green"
+              mb="5"
+              // _hover={{ bg: "brand.900", color: "brand.700" }}
+            >
+              Fund Wallet
+            </Button>
+            <Input type="file" onChange={onFileChange} mb="3" padding="1" />
+            {image && (
+              <Image
+                src={image}
+                type="image/png"
+                alt="your arweave upload"
+                pb="3"
+                maxW={["300px", "400px", "500px", "600px"]}
+                rounded="3xl"
+              />
+            )}
+            <Button
+              onClick={uploadFile}
+              // backgroundColor="brand.800"
+              // color="brand.900"
+              colorScheme="pink"
+              mb="3"
+              // _hover={{ bg: "brand.900", color: "brand.800" }}
+            >
+              Upload File
+            </Button>
+            <br />
+            {URI && (
+              <div>
+                <Alert status="success" rounded="full" mb="3">
+                  <AlertIcon />
+                  File uploaded to Arweave. gm Permaweb!
+                </Alert>
+                <Link href={URI} isExternal>
+                  View upload on Arweave <ExternalLinkIcon mx="2px" />
+                </Link>
+                <br />
+                <Text pt="3">
+                  Arweave ID: <Code>{transaction}</Code>
+                </Text>
+              </div>
+            )}
+          </div>
+        )}
+      </Container>
+    </div>
   );
 }

@@ -1,9 +1,8 @@
-import "../styles/globals.css";
 import { providers, utils } from "ethers";
 import { WebBundlr } from "@bundlr-network/client";
 import { useState, useRef } from "react";
 import { MainContext } from "../context";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme, ColorModeScript } from "@chakra-ui/react";
 import "@fontsource/chakra-petch";
 
 function MyApp({ Component, pageProps }) {
@@ -22,6 +21,10 @@ function MyApp({ Component, pageProps }) {
         800: "#e0def0",
         700: "#c7e2e3",
       },
+    },
+    config: {
+      initialColorMode: "dark",
+      useSystemColorMode: true,
     },
   });
 
@@ -52,6 +55,7 @@ function MyApp({ Component, pageProps }) {
         <MainContext.Provider
           value={{ initialize, fetchBalance, balance, bundlrInstance }}
         >
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
           <Component {...pageProps} />
         </MainContext.Provider>
       </ChakraProvider>
