@@ -78,9 +78,10 @@ export default function Home() {
       <Heading pb="5">Bundlr Network image uploader (MATIC)</Heading>
       <Text pb="5">
         Bundlr is building the next generation of data storage by bringing the
-        speed and ease of web2 to web3 technology. We're a decentralized storage
-        scaling platform powered by Arweave. We make it easy for developers and
-        businesses to store their data permanently, for a one-time fee.
+        speed and ease of web2 to web3 technology. We&apos;re a decentralized
+        storage scaling platform powered by Arweave. We make it easy for
+        developers and businesses to store their data permanently, for a
+        one-time fee.
       </Text>
       <Text pb="5">
         This dApp is built with the Bundlr JavaScript SDK and Arweave. The
